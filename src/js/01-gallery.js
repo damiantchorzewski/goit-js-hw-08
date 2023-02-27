@@ -1,21 +1,12 @@
-import SimpleLightbox from "../../node_modules/simplelightbox";
-// Add imports above this line
+import SimpleLightbox from "simplelightbox";
 import { galleryItems } from './gallery-items';
-// Change code below this line
-import "../../node_modules/simplelightbox/dist/simple-lightbox.min.css";
+import "simplelightbox/dist/simple-lightbox.min.css";
 
+const gallery = new SimpleLightbox('.gallery a');
 
+const images = galleryItems.map(item => item.original).join('');
 
-const images = galleryItems.map(item => `
-  <a href="${item.original}">
-    <img src="${item.preview}" alt="${item.description}" />
-  </a>
-`).join("");
-
-const gallery = new SimpleLightbox(images, {
-  captionsData: "alt",
-  captionDelay: 250,
-});
+gallery.load(images, galleryItems.map(item => item.description));
 
 gallery.on('show.simplelightbox', function () {
   console.log('Galeria pokazana');
