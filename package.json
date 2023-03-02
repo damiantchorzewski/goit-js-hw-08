@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@vimeo/player": "^2.18.0",
     "abortcontroller-polyfill": "^1.7.5",
     "acorn": "^8.8.2",
     "ansi-styles": "^4.3.0",
@@ -64,6 +65,7 @@
     "lightningcss-win32-x64-msvc": "^1.19.0",
     "lines-and-columns": "^1.2.4",
     "lmdb": "^2.5.2",
+    "lodash.throttle": "^4.1.1",
     "mdn-data": "^2.0.14",
     "merge2": "^1.4.1",
     "micromatch": "^4.0.5",
