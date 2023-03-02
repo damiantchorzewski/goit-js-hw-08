@@ -1,6 +1,9 @@
+
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 import { galleryItems } from './gallery-items.js';
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
+
+
 
 const gallery = document.querySelector('.gallery');
 
@@ -59,4 +62,27 @@ gallery.addEventListener('click', (event) => {
   window.addEventListener('keydown', closeModal);
 });
 
+
+
+gallery.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  const target = event.target;
+
+  if (target.nodeName !== 'IMG') {
+    return;
+  }
+
+  const original = target.dataset.source;
+
+  const instance = new SimpleLightbox('.gallery a', {
+    sourceAttr: 'href',
+    captionsData: 'alt',
+    captionDelay: 250,
+    closeText: '×',
+    navText: ['&larr;', '&rarr;'],
+  });
+
+  instance.open({ source: original });
+});
 console.log(galleryItems);
