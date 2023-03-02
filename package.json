@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    
     "@vimeo/player": "^2.18.0",
     "abortcontroller-polyfill": "^1.7.5",
     "acorn": "^8.8.2",
